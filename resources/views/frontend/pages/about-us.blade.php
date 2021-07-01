@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<!-- The above 3 meta tags must come first in the head; any other head content must come after these tags -->
 <title>About Us</title>
 <!-- All CSS -->
 <link href="css/all.css" rel="stylesheet">
@@ -25,38 +25,104 @@
 <body class="responsive">
 
     @include('frontend.layouts.headerNew')
-
+    
 <!-- Slider Section Starts Here -->
-<div class="innerBanner">
+<!-- <div class="innerBanner">
   <div class="container">
     <img src="{{asset('images/about.jpg')}}" alt="img">
   </div>
-</div>
+</div> -->
 <!-- Slider Section Ends Here -->
 
 <!-- aboutPg start -->
 <main class="aboutPg">
+  <!-- aboutSec start -->
   <div class="aboutSec">
     <div class="container">
-      <div class="row">
-        <div class="col-md-10 centerCol">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-          <a href="#">Read More</a>
+      <div class="row flexRow">
+        <div class="col-md-5 col-sm-5 col-xs-12">
+          <div class="aboutImg">
+            <img src="images/aboutImg.jpg" class="img-responsive" alt="aboutImg">
+          </div>
+        </div>
+        <div class="col-md-7 col-sm-7 col-xs-12">
+          <div class="aboutCntnt">
+            <h2>ABOUT US</h2>
+            <p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type speci men book it has?</p>
+            <p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type speci men book it has?</p>
+          </div>
+        </div>
+      </div>
+      <div class="row flexRow">
+        <div class="col-md-7 col-sm-7 col-xs-12">
+          <div class="aboutCntnt abtBtmCntnt">
+            <p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type speci men book it has?</p>
+            <p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type speci men book it has?</p>
+            <p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type speci men book it has?</p>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-12">
+          <div class="aboutImg">
+            <img src="images/pro-20.png" class="img-responsive" alt="aboutImg">
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- aboutSec end -->
+  <!-- testimonialSec start -->
+  <div class="testimonialSec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12 centerCol">
+          <h2>YOUR WORDS OUR PRIDE</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-sm-10 col-xs-12 centerCol">
+          <div class="testSlider">
+            <div class="test">
+              <div class="row flexRow">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  <div class="testImg">
+                    <img src="images/testImg.jpg" class="img-responsive" alt="testImg">
+                  </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <div class="testCntnt">
+                    <p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type speci men book it has?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="test">
+              <div class="row flexRow">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                  <div class="testImg">
+                    <img src="images/testImg.jpg" class="img-responsive" alt="testImg">
+                  </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <div class="testCntnt">
+                    <p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type speci men book it has?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- testimonialSec end -->
 </main>
 <!-- aboutPg end -->
 
 <!-- ourProSec end -->
 
-<!-- imgSec start -->
-<div class="imgSec">
-  <img src="{{asset('images/bgImg.jpg')}}" class="img-responsive" alt="bgImg">
-</div>
-<!-- imgSec end -->
+
 
 <!-- footer start -->
 @include('frontend.layouts.footerNew')

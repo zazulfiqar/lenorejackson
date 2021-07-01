@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Product Details</title>
+<title>Product Detail</title>
 <!-- All CSS -->
 <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 <!-- slicknav CSS -->
@@ -27,6 +27,34 @@
 
     @include('frontend.layouts.headerNew')
     @include('frontend.layouts.notification')
+
+
+    <!-- bannerSec start -->
+<div class="bannerSec innerBannerSec">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="{{asset('images/bannerBg.jpg')}}" alt="bannerBg" class="img-responsive">
+        <div class="carousel-caption">
+          <div class="container">
+            <div class="bannerCntnt">
+              <div class="row flexRow">
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <div class="cntnt">
+                    <h1 class="wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="2s">Product Detail</h1>                  </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- bannerSec end -->
+
 <!-- Slider Section Starts Here -->
 
 <!-- Slider Section Ends Here -->
@@ -40,8 +68,8 @@
       <div class="row flexRow">
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="proDetImg">
-            <img src="{{url('/americansook/public/../storage/app/'.$product_details->photo)}}" class="img-responsive" alt="proDetImg">
-            <a href="{{url('/americansook/public/../storage/app/'.$product_details->photo)}}" data-fancybox>
+            <img src="{{url('../storage/app/'.$product_details->photo)}}" class="img-responsive" alt="proDetImg">
+            <a href="{{url('../storage/app/'.$product_details->photo)}}" data-fancybox>
               <i class="fa fa-expand" aria-hidden="true"></i>
            </a>
           </div>
@@ -60,22 +88,30 @@
             </h3>
             <div class="clearfix"></div>
 
-            <p>{{ $product_details->description }}</p>
+            <p>{{ $product_details->summary }}</p>
             <form action="{{route('single-add-to-cart')}}" method="POST">
                 @csrf
                     <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="qty-input quantitySec">
+                        {{-- <div class="qty-input quantitySec">
                         <button class="qty-count qty-count--minus" data-action="minus" type="button"><i class="fa fa-minus"></i></button>
                         <input type="hidden" name="slug" value="{{$product_details->slug}}">
 
                         <input class="product-qty" type="number" name="quant[1]" min="1" max="200" value="1">
                         <button class="qty-count qty-count--add" data-action="add" type="button"><i class="fa fa-plus"></i></button>
+                        </div> --}}
+
+                        <div class="qty-input quantitySec">
+                          <input type="hidden" name="slug" value="{{$product_details->slug}}">
+
+                          <button class="qty-count qty-count--minus" data-action="minus" type="button"><i class="fa fa-minus"></i></button>
+                          <input class="product-qty" type="number" name="quant[1]" min="1" max="200" value="1">
+                          <button class="qty-count qty-count--add" data-action="add" type="button"><i class="fa fa-plus"></i></button>
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-6 col-xs-12">
                         <div class="cartBtn">
-                        <input type="submit" value="Add to Cart" >
+                        <input type="submit" class="webBtn" value="Add to Cart" >
                         </div>
                     </div>
                     </div>
@@ -94,9 +130,9 @@
 <!-- ourProSec end -->
 
 <!-- imgSec start -->
-<div class="imgSec">
+{{-- <div class="imgSec">
   <img src="{{ asset('images/bgImg.jpg') }}" class="img-responsive" alt="bgImg">
-</div>
+</div> --}}
 <!-- imgSec end -->
 
 <!-- footer start -->

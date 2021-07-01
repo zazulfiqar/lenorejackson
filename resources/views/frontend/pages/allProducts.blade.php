@@ -26,7 +26,91 @@
 
     @include('frontend.layouts.headerNew')
 
-<div class="ourProSec">
+
+     <!-- bannerSec start -->
+<div class="bannerSec innerBannerSec">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="{{asset('images/bannerBg.jpg')}}" alt="bannerBg" class="img-responsive">
+        <div class="carousel-caption">
+          <div class="container">
+            <div class="bannerCntnt">
+              <div class="row flexRow">
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <div class="cntnt">
+                    <h1 class="wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="2s">All Products</h1>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- bannerSec end -->
+
+
+<!-- proDetPg start -->
+<main class="clothingPg">
+  <!-- eventSec start -->
+  <div class="clothSec">
+    <div class="container">
+      <div class="col-md-7 col-sm-7 col-xs-12 centerCol">
+        <h2>All Products</h2>
+      </div>
+      @php
+      $brands =  DB::table('brands')->where('status', 'active')->get();
+      @endphp
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="{{route('allProducts')}}">All</a></li>
+
+
+  @foreach ($brands as $brand)
+  <li><a href="{{route('brands',$brand->id)}}">{{ $brand->title }}</a></li>
+  @endforeach
+        {{-- <li><a data-toggle="tab" href="#menu1">T-shirts</a></li>
+        <li><a data-toggle="tab" href="#menu2">watches</a></li>
+        <li><a data-toggle="tab" href="#menu3">Polo shirt</a></li>
+        <li><a data-toggle="tab" href="#menu4">Line Jacket</a></li>
+        <li><a data-toggle="tab" href="#menu5">Business shirt</a></li> --}}
+      </ul>
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <div class="proSec">
+            <div class="row">
+
+
+              @foreach ($allproducts as $allproduct)
+
+
+              <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="product">
+                  <a href="{{route('product-detail',$allproduct->id)}}">
+                    <img src="{{url('../storage/app/'.$allproduct->photo)}}" class="img-responsive" alt="pro">
+                  </a>
+                </div>
+              </div>
+
+
+              @endforeach
+            
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- eventSec end -->
+</main>
+<!-- proDetPg end -->
+
+{{-- <div class="ourProSec">
   <h2>ALL PRODUCTS</h2>
   <div class="container">
     <div class="row">
@@ -47,15 +131,15 @@
     @endforeach
 
     </div>
-    {{-- <a href="#" class="webBtn">View More</a> --}}
+  
   </div>
-</div>
+</div> --}}
 <!-- ourProSec end -->
 
 <!-- imgSec start -->
-<div class="imgSec">
+{{-- <div class="imgSec">
   <img src="{{asset('images/bgImg.jpg')}}"" class="img-responsive" alt="bgImg">
-</div>
+</div> --}}
 <!-- imgSec end -->
 
 <!-- footer start -->

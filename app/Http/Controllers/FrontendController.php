@@ -71,10 +71,12 @@ class FrontendController extends Controller
     }
 
     public function testIndex(Request $request){
+
+        
         $category =Category::where('status','active')->get();
         $brands=Brand::where('status','active')->get();
         $allproducts=Product::where('status','active')->Where('is_approved', 1)->orderBy('id','DESC')->limit(20)->get();
-
+    
         return view('frontend.pages.testIndex')
         ->with('brands',$brands)
         ->with('allproducts',$allproducts)

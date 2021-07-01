@@ -99,7 +99,7 @@
               <li><a href="#"><img src="images/icon-3.png" class="img-responsive" alt="icon"></a></li>
             </ul>
             <div class="footerLogo">
-              <a href="index.html">
+              <a href="{{ asset('/') }}">
                 <img src="images/logo.png" class="img-responsive" alt="logo">
               </a>
             </div>

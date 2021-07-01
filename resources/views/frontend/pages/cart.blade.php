@@ -28,6 +28,125 @@
     @include('frontend.layouts.headerNew')
     @include('frontend.layouts.notification')
 
+
+    <!-- bannerSec start -->
+<div class="bannerSec innerBannerSec">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="{{asset('images/bannerBg.jpg')}}" alt="bannerBg" class="img-responsive">
+        <div class="carousel-caption">
+          <div class="container">
+            <div class="bannerCntnt">
+              <div class="row flexRow">
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                  <div class="cntnt">
+                    <h1 class="wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="2s">Cart</h1>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- bannerSec end -->
+
+
+<!-- cartPg start -->
+<main class="cartPg">
+  <div class="cartSec">
+    <div class="container">
+      <div class="col-md-8 col-sm-8 col-xs-12">
+        <div class="cartTable">
+          <div class="table-responsive">
+            <table class="table">
+              <tbody>
+
+
+              @if(Helper::getAllProductFromCart())
+
+                @foreach(Helper::getAllProductFromCart() as $key=>$cart)
+
+
+                <tr>
+
+                  @php
+                  $photo=explode(',',$cart->product['photo']);
+                  @endphp
+                  <td class="col-md-6">
+                    <img src="{{url('../storage/app/'.$photo[0])}}" class="img-responsive pull-left" alt="cartImg">
+                    <span>
+                      <h6>Unit price</h6>
+                      <h4>$ {{number_format($cart['price'],2)}}</h4>
+                    </span>
+                  </td>
+
+                  <td> ${{$cart['amount']}} </td>
+                  <td>
+                    <a class="remove" href="{{route('cart-delete',$cart->id)}}"><i class="fa fa-times"></i></a>
+                </td>
+                  {{-- <td class="col-md-5">
+                    <p>Lorem Ipsum proinst gravida nibh veliat auctor aliquet aenean sollicitudin, lorem bibendum auctor, nisi elit consequat ipsum</p>
+                  </td> --}}
+                  <th class="col-md-1">
+                    <div class="qty-input quantitySec">
+                      <button class="qty-count qty-count--minus" data-action="minus" type="button"><i class="fa fa-minus"></i></button>
+                      <input type="hidden" name="qty_id[]" value="{{$cart->id}}">
+
+                      <input class="product-qty" type="number" name="quant[{{$key}}]" min="1" max="50" value="{{$cart->quantity}}">
+                      <button class="qty-count qty-count--add" data-action="add" type="button"><i class="fa fa-plus"></i></button>
+                    </div>
+                  </th>
+
+                
+                </tr>
+
+
+                @endforeach
+
+              @endif
+             
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="cartTotal">
+          <ul>
+            <li class="pull-left">Total Products</li>
+            <li class="pull-right">2</li>
+            <div class="clearfix"></div>
+            <li class="pull-left">Total Coupons</li>
+            <li class="pull-right">4</li>
+            <div class="clearfix"></div>
+            <li>You will earn 9 iPoints from this purchase</li>
+            <li class="pull-left">
+              <h6>Total</h6>
+              <p>Inclusive of VAT</p>
+            </li>
+            <li class="pull-right">
+              <h5>$ 90.00</h5>
+            </li>
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <div class="paymentMethod">
+          <button class="submit">Select Payment Method</button>
+          <p>This is Photoshop's version  of Lorem Ipsum proinst gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem bibendum auctor, nisi elit consequat ipsum</p>
+          <img src="images/paymentImg.png" class="img-responsive" alt="paymentImg">
+          <a href="checkout.html">Proceed to Checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- cartPg end -->
 <!-- Slider Section Starts Here -->
 {{-- <div class="innerBanner">
   <div class="container">

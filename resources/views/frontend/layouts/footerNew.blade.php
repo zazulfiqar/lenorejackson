@@ -1,3 +1,106 @@
+<!-- footer start -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="footerImg footerCntnt">
+          <a href="{{ asset('/') }}">
+            <img src="{{asset('images/footerLogo.png')}}" class="img-responsive" alt="footerLogo ">
+          </a>
+          <div class="socialIcons">
+            <ul class="list-inline">
+              <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="footerCntnt quickLinks">
+          <h6>QUICK LINKS</h6>
+          <ul>
+            <li><a href="{{ asset('/') }}" class="active">Home</a></li>
+            <li><a href="{{route('about-us')}}">About Us</a></li>
+
+      @php
+            $brands =  DB::table('brands')->where('status', 'active')->get();
+      @endphp
+      @foreach ($brands as $brand)
+      <li><a href="{{route('brands',$brand->id)}}">{{ $brand->title }}</a></li>
+      @endforeach
+       
+            <li><a href="{{route('contact')}}">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="footerCntnt">
+          <h6>Address</h6>
+          <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type sspecimen book.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- footer end -->
+
+<!-- bottomRow start -->
+<div class="bottomRow">
+  <div class="container">
+    <p>2021 Copyrights & Protected</p>
+  </div>
+</div>
+<!-- bottomRow end -->
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <a href="{{ asset('/') }}"><img src="images/logo.png" class="img-responsive" alt="logo"></a>
+        <h2>Login</h2>
+        <form>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Username or Email">
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Enter Password">
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="forgetLink pull-right">
+                <a href="#">Forget password ?</a>
+              </div>
+            </div>
+          </div>
+          <button class="submit webBtn">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- All JS -->
+<script src="{{asset('js/all.js')}}"></script>
+<!-- Custom JS -->
+<script src="{{asset('js/custom.js')}}"></script>
+
+{{-- 
 <footer>
     <div class="container-fluid">
       <div class="upperRow">
@@ -46,7 +149,7 @@
                   <li><a href="#"><img src="{{asset('images/icon-3.png')}}" class="img-responsive" alt="icon"></a></li>
                 </ul>
                 <div class="footerLogo">
-                  <a href="index.html">
+                  <a href="{{ asset('/') }}">
                     <img src="{{asset('images/logo.png')}}" class="img-responsive" alt="logo">
                   </a>
                 </div>
@@ -78,4 +181,4 @@
   <!-- jquery.slicknav JS -->
   <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
   <!-- Custom JS -->
-  <script src="{{ asset('js/custom.js') }}"></script>
+  <script src="{{ asset('js/custom.js') }}"></script> --}}

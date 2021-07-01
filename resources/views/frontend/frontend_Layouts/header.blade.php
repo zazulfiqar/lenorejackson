@@ -70,7 +70,7 @@
                       <div class="categories_nav">
                         <div class="menuSec">
                           <ul id="menu1">
-                            <li> <a href="index.html">Lorem Lipsum <span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <li> <a href="{{ asset('/') }}">Lorem Lipsum <span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                               <ul>
                                 <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
                                 <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
@@ -81,8 +81,8 @@
                             <li> <a href="javascript:void(0)">Lorem Lipsum <span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                               <div class="menuSec">
                                 <ul id="menu">
-                                  <li><a href="index.html" class="active">Home</a></li>
-                                  <li><a href="about.html">About Us</a></li>
+                                  <li><a href="{{ asset('/') }}" class="active">Home</a></li>
+                                  <li><a href="{{route('about-us')}}">About Us</a></li>
                                   <li><a href="products.html">Products <i class="fa fa-angle-down"></i></a>
                                     <ul>
                                       <li><a href="products.html">Shoes</a></li>
@@ -101,57 +101,11 @@
                                 <li><a href="javascript:void(0)">Lorem Ipsum </a></li>
                               </ul>
                             </li>
-                            <li> <a href="index.html">Lorem Lipsum <span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <li> <a href="{{ asset('/') }}">Lorem Lipsum <span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                               <div class="menuSec">
                                 <ul id="menu">
-                                  <li><a href="index.html" class="active">Home</a></li>
-                                  <li><a href="about.html">About Us</a></li>
-                                  <li><a href="products.html">Products <i class="fa fa-angle-down"></i></a>
-                                    <ul>
-                                      <li><a href="products.html">Shoes</a></li>
-                                      <li><a href="products.html">Shirts</a></li>
-                                      <li><a href="products.html">Pents</a></li>
-                                    </ul>
-                                  </li>
-                                  <li><a href="faq.html">FAQ'S</a></li>
-                                  <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                              </div>
-                              <ul>
-                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
-                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
-                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
-                                <li><a href="javascript:void(0)">Lorem Ipsum </a></li>
-                              </ul>
-                            </li>
-                            <li> <a href="javascript:void(0)">Lorem Lipsum <span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                              <div class="menuSec">
-                                <ul id="menu">
-                                  <li><a href="index.html" class="active">Home</a></li>
-                                  <li><a href="about.html">About Us</a></li>
-                                  <li><a href="products.html">Products <i class="fa fa-angle-down"></i></a>
-                                    <ul>
-                                      <li><a href="products.html">Shoes</a></li>
-                                      <li><a href="products.html">Shirts</a></li>
-                                      <li><a href="products.html">Pents</a></li>
-                                    </ul>
-                                  </li>
-                                  <li><a href="faq.html">FAQ'S</a></li>
-                                  <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                              </div>
-                              <ul>
-                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
-                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
-                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
-                                <li><a href="javascript:void(0)">Lorem Ipsum </a></li>
-                              </ul>
-                            </li>
-                            <li> <a href="index.html">Lorem Lipsum <span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                              <div class="menuSec">
-                                <ul id="menu">
-                                  <li><a href="index.html" class="active">Home</a></li>
-                                  <li><a href="about.html">About Us</a></li>
+                                  <li><a href="{{ asset('/') }}" class="active">Home</a></li>
+                                  <li><a href="{{route('about-us')}}">About Us</a></li>
                                   <li><a href="products.html">Products <i class="fa fa-angle-down"></i></a>
                                     <ul>
                                       <li><a href="products.html">Shoes</a></li>
@@ -173,8 +127,54 @@
                             <li> <a href="javascript:void(0)">Lorem Lipsum <span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                               <div class="menuSec">
                                 <ul id="menu">
-                                  <li><a href="index.html" class="active">Home</a></li>
-                                  <li><a href="about.html">About Us</a></li>
+                                  <li><a href="{{ asset('/') }}" class="active">Home</a></li>
+                                  <li><a href="{{route('about-us')}}">About Us</a></li>
+                                  <li><a href="products.html">Products <i class="fa fa-angle-down"></i></a>
+                                    <ul>
+                                      <li><a href="products.html">Shoes</a></li>
+                                      <li><a href="products.html">Shirts</a></li>
+                                      <li><a href="products.html">Pents</a></li>
+                                    </ul>
+                                  </li>
+                                  <li><a href="faq.html">FAQ'S</a></li>
+                                  <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                              </div>
+                              <ul>
+                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
+                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
+                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
+                                <li><a href="javascript:void(0)">Lorem Ipsum </a></li>
+                              </ul>
+                            </li>
+                            <li> <a href="{{ asset('/') }}">Lorem Lipsum <span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                              <div class="menuSec">
+                                <ul id="menu">
+                                  <li><a href="{{ asset('/') }}" class="active">Home</a></li>
+                                  <li><a href="{{route('about-us')}}">About Us</a></li>
+                                  <li><a href="products.html">Products <i class="fa fa-angle-down"></i></a>
+                                    <ul>
+                                      <li><a href="products.html">Shoes</a></li>
+                                      <li><a href="products.html">Shirts</a></li>
+                                      <li><a href="products.html">Pents</a></li>
+                                    </ul>
+                                  </li>
+                                  <li><a href="faq.html">FAQ'S</a></li>
+                                  <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                              </div>
+                              <ul>
+                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
+                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
+                                <li><a href="javascript:void(0)">Lorem Ipsum</a></li>
+                                <li><a href="javascript:void(0)">Lorem Ipsum </a></li>
+                              </ul>
+                            </li>
+                            <li> <a href="javascript:void(0)">Lorem Lipsum <span><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                              <div class="menuSec">
+                                <ul id="menu">
+                                  <li><a href="{{ asset('/') }}" class="active">Home</a></li>
+                                  <li><a href="{{route('about-us')}}">About Us</a></li>
                                   <li><a href="products.html">Products <i class="fa fa-angle-down"></i></a>
                                     <ul>
                                       <li><a href="products.html">Shoes</a></li>

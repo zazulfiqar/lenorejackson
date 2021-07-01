@@ -1,3 +1,62 @@
+
+<header>
+  <div class="logoSeec">
+    <div class="container-fluid">
+      <a href="{{ asset('/') }}">
+        <img src="{{asset('images/logo.png')}}" class="img-responsive" alt="logo">
+      </a>
+    </div>
+  </div>
+  <div class="navigation">
+    <div class="container-fluid">
+      <div class="row flexRow">
+        <div class="col-md-9 col-sm-9 col-xs-12">
+          <div class="menuSec">
+            <ul id="menu">
+              <li><a href="{{ asset('/') }}">Home</a></li>
+             
+
+        @php
+              $brands =  DB::table('brands')->where('status', 'active')->get();
+        @endphp
+        @foreach ($brands as $brand)
+        <li><a href="{{route('brands',$brand->id)}}">{{ $brand->title }}</a></li>
+        @endforeach
+
+        <li><a href="{{route('about-us')}}">About Us</a></li>
+             
+              <li><a href="{{route('contact')}}">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12">
+          <div class="searchSec">
+            <ul class="list-inline">
+              <li><a href="#"><i class="fa fa-search shwbtn"></i></a>
+                <form class="myText">
+                  <input type="text" placeholder="Search ...">
+                  <button><a href="#"><i class="fa fa-search"></i></a></button>
+                </form>
+              </li>
+              <li>
+
+                {{-- <button  class="btn btn-default dropdown-toggle"  aria-haspopup="true" aria-expanded="false">
+                  <a href="{{url('cart')}}"> {{Helper::cartCount()}}
+                  <img src="{{asset('images/icon-7.png')}}"></a>
+              </button> --}}
+                
+                
+                <a href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i>{{Helper::cartCount()}}</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user-circle-o"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{{-- 
 <header>
     <div class="logoBar">
       <div class="row flexRow">
@@ -191,4 +250,4 @@
         </div>
       </div>
     </div>
-  </header>
+  </header> --}}

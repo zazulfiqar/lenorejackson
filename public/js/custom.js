@@ -1,8 +1,44 @@
 /***** Animation JS *****/
 new WOW().init();
 
-$(function(){
-$('#menu').slicknav();
+$(".shwbtn").click(function() {
+  $(".myText").toggle();  
+});
+
+$('.testSlider').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow:1,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
 });
 
 // quantity start
@@ -67,31 +103,3 @@ $input.val(qty);
 });
 })();
 // quantity end
-
-
-$(document).ready(function() {
-//toggle the component with class accordion_body
-$(".accordion_head").click(function() {
-if ($('.accordion_body').is(':visible')) {
-$(".accordion_body").slideUp(300);
-$(".plusminus").text('+');
-}
-if ($(this).next(".accordion_body").is(':visible')) {
-$(this).next(".accordion_body").slideUp(300);
-$(this).children(".plusminus").text('+');
-} else {
-$(this).next(".accordion_body").slideDown(300);
-$(this).children(".plusminus").text('-');
-}
-});
-});
-
-document.getElementById("expand").addEventListener("click", function() 
-{
-var displayDiv = document.getElementById('unhide');
-var displayValue = (displayDiv.style.display === "block") ? "none" : "block";
-this.innerHTML = (displayValue === "block") ? "Category" : "Category";
-displayDiv.style.display = displayValue;
-});
-
-
